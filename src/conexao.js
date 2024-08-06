@@ -6,7 +6,9 @@ const knex = require('knex')({
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
     },
-    ssl: false
+    ssl: {
+        rejectUnauthorized: false, // Isto ignora a validação do certificado. Use true em produção e forneça um certificado válido.
+      },
 });
 
 module.exports = knex;

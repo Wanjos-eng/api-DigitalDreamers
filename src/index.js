@@ -9,5 +9,5 @@ app.use(express.json());
 app.use(rotas);
 
 app.listen(port, () => {
-    console.log('Servidor rodando em http://localhost:' + port)
+    console.log('Servidor rodando em ' + port)
 });
