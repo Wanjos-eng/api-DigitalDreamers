@@ -5,10 +5,10 @@ const knex = require('knex')({
         user: process.env.DB_USER,
         password: process.env.DB_PASS,
         database: process.env.DB_NAME,
+        ssl: {
+            rejectUnauthorized: false, // Isto ignora a validação do certificado. Use true em produção e forneça um certificado válido.
+          },
     },
-    ssl: {
-        rejectUnauthorized: false, // Isto ignora a validação do certificado. Use true em produção e forneça um certificado válido.
-      },
 });
 
 module.exports = knex;
